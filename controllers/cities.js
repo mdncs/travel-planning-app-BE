@@ -1,23 +1,9 @@
 const {
-    fetchAllCities,
-    fetchRestaurants,
-    fetchLandmarks
+    fetchPlacesByCity
 } = require('../models/cities');
 
-exports.getAllCities = (req, res, next) => {
-    res.send(fetchAllCities()[0])
-    .catch(err => next(err));
-}
-
-exports.getRestaurants = (req, res, next) => {
-    fetchRestaurants()
+exports.getPlacesByCity = (req, res, next) => {
+    fetchPlacesByCity()
     .then(({items}) => res.send(items))
     .catch(err => next(err));
 }
-
-exports.getLandmarks = (req, res, next) => {
-    fetchLandmarks().then(({items}) => res.send({items}))
-    .catch(err => next(err));
-}
-
-exports.get

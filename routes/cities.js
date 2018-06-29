@@ -1,12 +1,8 @@
 const router = require('express').Router();
 const {
-    getAllCities,
-    getRestaurants,
-    getLandmarks
+    getPlacesByCity
 } = require('../controllers/cities');
 
-router.get('/', getAllCities);
-router.get('/restaurants', getRestaurants);
-router.get('/landmarks', getLandmarks);
+router.get('/city/places', getPlacesByCity);
 
 module.exports = router;
