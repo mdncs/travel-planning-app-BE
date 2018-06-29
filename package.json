@@ -1,0 +1,28 @@
+{
+  "name": "travel-planning-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "NODE_ENV='test' mocha spec --timeout 10000",
+    "dev": "nodemon listen.js",
+    "start": "node listen.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdncs/travel-planning-app-BE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdncs/travel-planning-app-BE/issues"
+  },
+  "homepage": "https://github.com/mdncs/travel-planning-app-BE#readme",
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5"
+  }
+}

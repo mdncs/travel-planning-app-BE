@@ -1,35 +1,23 @@
 const express = require('express');
 const app = express();
-const axios = require('axios');
-const fs = require('fs');
+const apiRouter = require('./routes/api');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const comments = (req, res, next) => {
-    return axios.get('https://jsonplaceholder.typicode.com/comments')
-    .then(({ data }) => {
-        res.send({ data })
-    })
-    .catch(err => next(err));
-}
+app.use(bodyParser.json());
+app.use(cors());
 
-const users = (req, res, next) => {
-    return axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(({ data }) => {
-        res.send({ data })
-    })
-    .catch(err => next(err));
-}
+app.use('/api', apiRouter);
 
-const posts = (req, res, next) => {
-    return axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(({ data }) => {
-            res.send({ data })
-        })
-        .catch(err => next(err));
-}
+// error handling
+app.use('/*', (req, res, next) => {
+    next({ status: 404, msg: 'Page not found' });
+});
 
-app.get('/', (req, res) => res.send('Hello!'));
-app.get('/comments', comments);
-app.get('/posts', posts);
-app.get('/users', users);
+app.use((err, req, res, next) => {
+    err.status
+        ? res.status(err.status).send(err.msg)
+        : res.status(500).send('Internal server error');
+})
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+module.exports = app;
