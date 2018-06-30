@@ -1,10 +1,26 @@
 const axios = require('axios');
 const places = require('../demoSearchResults.json');
 const start = require('../demoStartPoint.json');
+const efficientRes = require('../demoSortedRoutes.json');
 const {app_id, app_code} = require('../config.js');
+const stripTitle = /[^a-zA-Z\d]/g;
 
-function getQueryForEfficientDistance(startPoint, arr){
-  const qStr = (title, position) => `${title.replace(/[^a-zA-Z\d]/g,'')};${position[0]},${position[1]}`;
+/*'waypoints' is the array that the sequence-request returns. 'destinations' is an array of objects from a HERE search - the ones you want to have an efficient distance for. The sequence-sort doesn't return the actual sorted objects, only a reference of HOW they should be sorted, so this function looks at the returned sort order and then sorts the actual destination info to match it.*/
+function sortDestinations(waypoints, destinations){
+  const sortedDestinations = waypoints.slice(1,-1).map(waypoint => {
+    return destinations.find(destination => {
+      return destination.title.replace(stripTitle,'') === waypoint.id;
+    });
+  });
+
+  return sortedDestinations;
+}
+
+splitIntoItinerary(efficientRes.results[0].waypoints, places.results.items.slice(0,6));
+
+/*startPoint is a HERE object for the hotel you stay at. arr is the array called 'items' that HERE gives on a returned search.*/
+function getQueryForEfficientDistance(startPoint, arr){ 
+  const qStr = (title, position) => `${title.replace(stripTitle,'')};${position[0]},${position[1]}`;
 
   const startQuery = qStr(startPoint.title, startPoint.position); 
   const visitQueries = arr.reduce((acc, {title, position}, i) => {
