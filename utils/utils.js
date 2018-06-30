@@ -5,6 +5,23 @@ const efficientRes = require('../demoSortedRoutes.json');
 const {app_id, app_code} = require('../config.js');
 const stripTitle = /[^a-zA-Z\d]/g;
 
+/*In each HERE place object, there is another object called 'openingHours'. This contains an array called 'structured', which contains further objects that break down what times and days the venue is open. This function takes that array and returns a simplified object of seven keys, one for each day. If the place is closed on that day, the value is NULL; otherwise, it's an array with two elements: the opening time, and the closing time. Not all HERE place objects have opening times, so that needs to be accounted for. */
+function getClarifiedOpeningTimes(arr){
+  const convertNumToTimeString = n => '0'.repeat(4-`${n}`.length) + n;
+
+  return arr.reduce((acc, {start, duration, recurrence} ) => {
+    const openingTime = +start.slice(1,5); 
+    const openForThisLong = (+duration.slice(2,4)*100) + (+duration.slice(-3,-1));
+    const closingTime = (openingTime + openForThisLong) % 2400;
+    const daysOpen = recurrence.slice(recurrence.lastIndexOf(':')+1).split(',');
+
+    return daysOpen.reduce((acc, day) => {
+      acc[day] = [convertNumToTimeString(openingTime), convertNumToTimeString(closingTime)]; 
+      return acc; 
+    }, acc);
+  }, {MO: null, TU: null, WE: null, TH: null, FR: null, SA: null, SU: null});
+}
+
 /*'waypoints' is the array that the sequence-request returns. 'destinations' is an array of objects from a HERE search - the ones you want to have an efficient distance for. The sequence-sort doesn't return the actual sorted objects, only a reference of HOW they should be sorted, so this function looks at the returned sort order and then sorts the actual destination info to match it.*/
 function sortDestinations(waypoints, destinations){
   const sortedDestinations = waypoints.slice(1,-1).map(waypoint => {
@@ -15,8 +32,6 @@ function sortDestinations(waypoints, destinations){
 
   return sortedDestinations;
 }
-
-splitIntoItinerary(efficientRes.results[0].waypoints, places.results.items.slice(0,6));
 
 /*startPoint is a HERE object for the hotel you stay at. arr is the array called 'items' that HERE gives on a returned search.*/
 function getQueryForEfficientDistance(startPoint, arr){ 
