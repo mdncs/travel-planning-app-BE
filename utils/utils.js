@@ -3,9 +3,30 @@ const demoSearchResults = require('../demoSearchResults.json');
 const demoStartPoint = require('../demoStartPoint.json');
 const demoSortedRoutes = require('../demoSortedRoutes.json');
 const demoSortedDestinations = require('../demoSortedDestinations.json');
+const demoNestedArrs = require('../demoNestedArrs.json'); 
+const demoNestedArrs = require('..demoNestedArrs.json');
 const {app_id, app_code} = require('../config.js');
 const stripTitle = /[^a-zA-Z\d]/g;
 
+/*This function takes a nested array of the activities for each day, and the start point. For each day it strips out the coordinates from the activities, adds the starting coords to the beginning and end, and then builds a HERE query. The result is an array of queries: each one requests a journey from the hotel, to the day's activities, and back to the hotel again. */
+function getQueriesForEachDayOfTravel(arrayOfDays, startPoint){
+  const hotel = startPoint.position; 
+  const arrayOfWaypoints = arrayOfDays.map(oneDayArray => {
+    return [hotel, ...oneDayArray.map(destination => destination.position), hotel];
+  });
+  const arrayOfQueries = arrayOfWaypoints.map(oneDayWPs => {
+    const waypoints = oneDayWPs.reduce((acc, [lat, long], i) => `${acc}&waypoint${i}=${lat},${long}`, '');
+    const finalQuery = (
+      `app_id=${app_id}`      + 
+      `&app_code=${app_code}` + 
+      `&mode=fastest;car`     +
+      waypoints
+    );
+    return `https://route.cit.api.here.com/routing/7.2/calculateroute.json?${finalQuery}`; 
+  });
+
+  return arrayOfQueries; 
+}
 
 /*This function takes an array of HERE objects sorted by most efficient route, and the number of activities per day the user wants to do. It returns an array of arrays, with each nested array being a set of activities for a day. The function should spread activities to avoid any gross un-evenness - eg: 10 activities at 3 per day needs 4 days to do, but a schedule of 3,3,2,2 is better than 3,3,3,1.*/
 function sortIntoSets(activities, nPerDay){
