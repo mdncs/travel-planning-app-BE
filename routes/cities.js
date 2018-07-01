@@ -4,7 +4,7 @@ const {
     getRestaurantsByCity
 } = require('../controllers/cities');
 
-router.get('/city/places', getPlacesByCity);
-router.get('/city/restaurants', getRestaurantsByCity)
+router.get('/:cityName/places', getPlacesByCity);
+router.get('/:cityName/restaurants', getRestaurantsByCity)
 
 module.exports = router;

@@ -4,13 +4,15 @@ const {
 } = require('../models/cities');
 
 exports.getPlacesByCity = (req, res, next) => {
-    fetchPlacesByCity()
+    const { cityName } = req.params;
+    fetchPlacesByCity(cityName)
     .then(({items}) => res.send(items))
     .catch(err => next(err));
 }
 
 exports.getRestaurantsByCity = (req, res, next) => {
-    fetchRestaurantsByCity('Manchester')
+    const { cityName } = req.params;
+    fetchRestaurantsByCity(cityName)
     .then(({items}) => res.send({items}))
     .catch(err => next(err));
 }
