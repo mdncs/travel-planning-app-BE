@@ -10,7 +10,7 @@ exports.getPlacesByCity = (req, res, next) => {
 }
 
 exports.getRestaurantsByCity = (req, res, next) => {
-    fetchRestaurantsByCity()
+    fetchRestaurantsByCity('Manchester')
     .then(({items}) => res.send({items}))
     .catch(err => next(err));
 }
