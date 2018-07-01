@@ -19,8 +19,8 @@ exports.getPlacesByCity = (req, res, next) => {
             } else if (cityName === 'london') {
                 return {
                     ...item,
-                    imageUrl: londonDatan[index].imageUrl,
-                    description: londonDatan[index].description
+                    imageUrl: londonData[index].imageUrl,
+                    description: londonData[index].description
                 }
             } else {
                 return item;
