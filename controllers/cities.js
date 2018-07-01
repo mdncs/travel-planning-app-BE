@@ -9,10 +9,12 @@ exports.getPlacesByCity = (req, res, next) => {
     fetchPlacesByCity(cityName)
     .then(({items}) => {
         const places = items.map((item, index) => {
-            return {
-                ...item, 
-                imageUrl: manchesterData[index].imageUrl,
-                description: manchesterData[index].description
+            if (cityName === 'manchester') {
+                return {
+                    ...item,
+                    imageUrl: manchesterData[index].imageUrl,
+                    description: manchesterData[index].description
+                }
             }
         });
         res.send({ places });
