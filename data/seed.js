@@ -21,3 +21,4 @@ session.run("CREATE (n:Person {name: 'ALice'}) RETURN n.name")
     session.close();
 })
 .catch(err => console.log(err));
+
