@@ -15,6 +15,8 @@ exports.getPlacesByCity = (req, res, next) => {
                     imageUrl: manchesterData[index].imageUrl,
                     description: manchesterData[index].description
                 }
+            } else {
+                return item;
             }
         });
         res.send({ places });
