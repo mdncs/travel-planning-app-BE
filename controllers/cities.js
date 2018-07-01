@@ -3,6 +3,7 @@ const {
     fetchRestaurantsByCity
 } = require('../models/cities');
 const manchesterData = require('../utils/manchester.json');
+const londonData = require('../utils/london.json');
 
 exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
@@ -14,6 +15,12 @@ exports.getPlacesByCity = (req, res, next) => {
                     ...item,
                     imageUrl: manchesterData[index].imageUrl,
                     description: manchesterData[index].description
+                }
+            } else if (cityName === 'london') {
+                return {
+                    ...item,
+                    imageUrl: londonData[index].imageUrl,
+                    description: londonData[index].description
                 }
             } else {
                 return item;

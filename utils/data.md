@@ -1,5 +1,5 @@
-
 # Manchester places
+
 John Rylands Library
 Manchester Arndale
 Museum of Science and Industry
@@ -40,3 +40,46 @@ Minshull Street Crown Court
 Castlefield Urban Heritage Park
 Greater Manchester Police Museum
 Rock over Climbing
+
+# London Places
+
+Theatre Royal Drury Lane
+Coca-Cola London Eye
+National Gallery
+Somerset House
+Duchess Theatre
+British museum
+Big Ben
+Novello Theatre
+Shaftesbury Theatre
+M&M'S World
+Tate Modern
+10 Downing Street
+St Paul's Cathedral
+The London Dungeon
+Her Majesty's Theatre
+Westminster Abbey
+Cambridge Theatre
+Lyceum Theatre
+National Theatre
+London Transport Museum
+Queen's Theatre
+Forbidden Planet
+Noel Coward Theatre
+Prince of Wales Theatre
+Kinky Boots at Adelphi Theatre
+Churchill War Rooms
+Imperial War Museum
+Buckingham Palace
+Southbank Centre
+Lyric Theatre
+Fortnum & Mason
+Houses of Parliament
+Apple Store
+Playhouse Theatre
+Royal Opera House
+Museum of London
+St Martin's Theatre
+Borough Market
+Royal Festival Hall
+Piccadilly Theatre
