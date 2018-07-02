@@ -1,0 +1,159 @@
+{
+  "manchester":  {
+                  "position": [
+                      53.48579,
+                      -2.23673
+                  ],
+                  "distance": 246,
+                  "title": "Crowne Plaza Hotel",
+                  "averageRating": 0,
+                  "category": {
+                      "id": "hotel",
+                      "title": "Hotel",
+                      "href": "https://places.cit.api.here.com/places/v1/categories/places/hotel?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                      "type": "urn:nlp-types:category",
+                      "system": "places"
+                  },
+                  "icon": "https://download.vcdn.cit.data.here.com/p/d/places2_stg/icons/categories/01.icon",
+                  "vicinity": "70 Shudehill<br/>Northern Quarter<br/>Manchester<br/>M4 4",
+                  "having": [],
+                  "type": "urn:nlp-types:place",
+                  "href": "https://places.cit.api.here.com/places/v1/places/826gcw2m-0161cd5d195f49f4bb4c431a2b6320f0;context=Zmxvdy1pZD1hMDI1MTdmZC0zZTJkLTVmNjAtOWNkYi0wMGY5OGI5OGE5MzJfMTUzMDUzNDkwMzc5Nl84Mjg3Xzg3MTUmcmFuaz0x?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                  "id": "826gcw2m-0161cd5d195f49f4bb4c431a2b6320f0",
+                  "chainIds": [
+                      "403"
+                  ],
+                  "alternativeNames": [
+                      {
+                          "name": "Crowne Plaza Manchester City Centre",
+                          "language": "en"
+                      },
+                      {
+                          "name": "Crowne Plaza Manchester",
+                          "language": "en"
+                      },
+                      {
+                          "name": "Manchester Crowne Plaza",
+                          "language": "en"
+                      }
+                  ]
+                  }, 
+  "london":       {
+                  "position": [
+                      51.51407,
+                      -0.18952
+                  ],
+                  "distance": 324,
+                  "title": "London House Hotel",
+                  "averageRating": 0,
+                  "category": {
+                      "id": "hotel",
+                      "title": "Hotel",
+                      "href": "https://places.cit.api.here.com/places/v1/categories/places/hotel?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                      "type": "urn:nlp-types:category",
+                      "system": "places"
+                  },
+                  "icon": "https://download.vcdn.cit.data.here.com/p/d/places2_stg/icons/categories/01.icon",
+                  "vicinity": "Kensington Gardens Square<br/>Bayswater<br/>London<br/>W2 4DJ",
+                  "having": [],
+                  "type": "urn:nlp-types:place",
+                  "href": "https://places.cit.api.here.com/places/v1/places/826gcpv5-1ca97ef59c9f43f7a9884c70174d3829;context=Zmxvdy1pZD1kMzBhY2JlNC0xOTI4LTVkNGMtODFiNi1kMDI5YjNjZjRlNTVfMTUzMDUzNTEyMzk5OF85MDAyXzM0MTYmcmFuaz0y?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                  "id": "826gcpv5-1ca97ef59c9f43f7a9884c70174d3829",
+                  "alternativeNames": [
+                      {
+                          "name": "London House",
+                          "language": "en"
+                      },
+                      {
+                          "name": "London House Bayswater Hotel",
+                          "language": "en"
+                      },
+                      {
+                          "name": "London Hotel",
+                          "language": "en"
+                      }
+                  ]
+                  }, 
+  "birmingham":   {
+                  "position": [
+                      52.475115,
+                      -1.914094
+                  ],
+                  "distance": 4085,
+                  "title": "Hampton by Hilton",
+                  "averageRating": 0,
+                  "category": {
+                      "id": "hotel",
+                      "title": "Hotel",
+                      "href": "https://places.cit.api.here.com/places/v1/categories/places/hotel?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                      "type": "urn:nlp-types:category",
+                      "system": "places"
+                  },
+                  "icon": "https://download.vcdn.cit.data.here.com/p/d/places2_stg/icons/categories/01.icon",
+                  "vicinity": "200 Broad Street<br/>Edgbaston<br/>Birmingham<br/>B15 1SU",
+                  "having": [],
+                  "type": "urn:nlp-types:place",
+                  "href": "https://places.cit.api.here.com/places/v1/places/826gcqds-c06b8933240146aea71fd00c5211162e;context=Zmxvdy1pZD1hYjAzNjVjNS0wOWYzLTVjNDItOTE5YS01ZTNkZjgxMzBlMWJfMTUzMDUzNTQ0MDEwMV8xMjM2XzYyMjkmcmFuaz00?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                  "tags": [
+                      {
+                          "id": "british",
+                          "title": "British",
+                          "group": "cuisine"
+                      }
+                  ],
+                  "id": "826gcqds-c06b8933240146aea71fd00c5211162e",
+                  "chainIds": [
+                      "194"
+                  ],
+                  "alternativeNames": [
+                      {
+                          "name": "Hampton by Hilton Birmingham Broad Street",
+                          "language": "en"
+                      }
+                  ]
+                  }, 
+  "leeds":        {
+                  "position": [
+                      53.795028,
+                      -1.536651
+                  ],
+                  "distance": 986,
+                  "title": "The Bells Serviced Apartments",
+                  "averageRating": 0,
+                  "category": {
+                      "id": "hotel",
+                      "title": "Hotel",
+                      "href": "https://places.cit.api.here.com/places/v1/categories/places/hotel?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                      "type": "urn:nlp-types:category",
+                      "system": "places"
+                  },
+                  "icon": "https://download.vcdn.cit.data.here.com/p/d/places2_stg/icons/categories/01.icon",
+                  "vicinity": "Church Row<br/>Arts Quarter<br/>Leeds<br/>LS2 7",
+                  "having": [],
+                  "type": "urn:nlp-types:place",
+                  "href": "https://places.cit.api.here.com/places/v1/places/826gcwfj-2c44a825376148839ffe66aba0b3ce18;context=Zmxvdy1pZD04MjZlYmZmOS0wNWI4LTVmYWEtYjU3Ni02MzdmYzQ0ZGRmZGZfMTUzMDUzNTcyNzQyNF8zOTUxXzk5MTAmcmFuaz01?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                  "id": "826gcwfj-2c44a825376148839ffe66aba0b3ce18"
+                  }, 
+  "liverpool":    {
+                  "position": [
+                      53.422535,
+                      -2.998466
+                  ],
+                  "distance": 459,
+                  "title": "Titanic Hotel Liverpool",
+                  "averageRating": 0,
+                  "category": {
+                      "id": "hotel",
+                      "title": "Hotel",
+                      "href": "https://places.cit.api.here.com/places/v1/categories/places/hotel?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                      "type": "urn:nlp-types:category",
+                      "system": "places"
+                  },
+                  "icon": "https://download.vcdn.cit.data.here.com/p/d/places2_stg/icons/categories/01.icon",
+                  "vicinity": "Walter Street<br/>Liverpool<br/>Liverpool<br/>L5 9SR",
+                  "having": [],
+                  "type": "urn:nlp-types:place",
+                  "href": "https://places.cit.api.here.com/places/v1/places/826aabd1-b72044e9a6680a13aac53c99a52854bc;context=Zmxvdy1pZD04Yzg2OTM4YS1mYWIwLTU0NzMtOGQ5YS1lOWM0MzAyZWJjNDRfMTUzMDUzNjI3OTczOF84NTM2XzExMTQmcmFuaz0w?app_id=jwBXL0FhwOhwIQ6rchL8&app_code=2OmhTDSj0bPgD_mzzn88UQ",
+                  "id": "826aabd1-b72044e9a6680a13aac53c99a52854bc"
+                  }
+}

@@ -33,8 +33,10 @@ function buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint){
         id: j+1,
         title: activity.title,
         time: arrayOfArrivalTimes[i][j],
-        description: '',
-        imageUrl:''
+        description: activity.description || '',
+        imageUrl: activity.imageUrl || '', 
+        link: activity.link || '', 
+        city: activity.city || ''
       };
     });
     buttons.push(`Day ${i+1}`);
@@ -47,7 +49,7 @@ function buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint){
 /* This takes an array of route data. It returns an array of the times they should set off from each point, assuming they start at 9:00 spend 2 hours at each location.*/
 function parseTravelTimes(route){
   const {leg} = route[0]; 
-  let startTime = 1530432000351; 
+  let startTime = 1530432000351; // When passed to Date, produces a time string at precisely 09:00am. Adding traveltime in milliseconds produces the required timestrings. 
   const twoHours = 7200000;
   const arrivalTimes = leg.map((fromXtoY) => {
     const {travelTime} = fromXtoY; 
@@ -66,7 +68,7 @@ function getQueriesForEachDayOfTravel(arrayOfDays, startPoint){
   });
   const arrayOfQueries = arrayOfWaypoints.map(oneDayWPs => {
     const waypoints = oneDayWPs.reduce((acc, [lat, long], i) => `${acc}&waypoint${i}=geo!${lat},${long}`, '');
-    const finalQuery = ( //Remember you added 'geo' in there.
+    const finalQuery = (
       `app_id=${app_id}`      + 
       `&app_code=${app_code}` + 
       `&mode=fastest;car`     +
@@ -83,7 +85,7 @@ function sortIntoSets(activities, nPerDay){
   let daysLeft = Math.ceil(activities.length / nPerDay); 
   let scheduleArr = [];
 
-  activities = activities.slice();
+  activities = activities.slice(); // To avoid any mutation issues. 
   while(activities.length && daysLeft){
     const nForThisDay = Math.ceil(activities.length / daysLeft);
     scheduleArr.push(
