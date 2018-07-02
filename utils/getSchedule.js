@@ -2,7 +2,7 @@ const axios = require('axios');
 const {app_id, app_code} = require('../config');
 const stripTitle = /[^a-zA-Z\d]/g;
 
-/*This takes a HERE API object as the startpoint, an array of HERE objects as activities, and the number of activivities per day the user wants. It returns a promise that resolves into an object containing the schedule (So you need to call .then on it afterwards, ie 'getSchedule(args).then(schedule => ...) )*/
+/*This takes a HERE API object as the startpoint, an array of HERE objects as activities, and the number of activities per day the user wants. It returns a promise that resolves into an object containing the schedule (So you need to call .then on it afterwards, ie 'getSchedule(args).then(schedule => ...) )*/
 exports.getSchedule = function(startPoint, activities, nPerDay){
   const firstQuery = getQueryForEfficientDistance(startPoint, activities);
   return axios.get(firstQuery)
@@ -21,14 +21,16 @@ exports.getSchedule = function(startPoint, activities, nPerDay){
     });
   });
 }
+/* ------------------------- All functions below this line are invoked by the 'getSchedule' function - they don't need to be invoked independently. -------------------------*/
 
-/* Takes the array containing arrays for each day's activities, the array of arrays for each day's travel times, and the start-point object,  and weaves them together into the final object to be sent to the frontend. */
+
+/* Takes the array containing arrays for each day's activities, the array of arrays for each day's travel times, and the start-point object, and weaves them together into the final object to be sent to the frontend. */
 function buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint){
   const buttons = [];
   const data = arrayOfDaysOut.reduce((acc, oneDayArray, i) => {
     acc[`Day${i+1}`] = [startPoint, ...oneDayArray, startPoint].map((activity, j) => {
       return {
-        id: j+1,
+        id: activity.id,
         title: activity.title,
         time: arrayOfArrivalTimes[i][j],
         description: '',
