@@ -12,12 +12,12 @@
 // });
 
 const neo4j = require('neo4j-driver');
-// const driver = neo4j.v1.driver('bolt://hobby-kejliagjjjpngbkedcdfljbl.dbs.graphenedb.com:24786', neo4j.v1.auth.basic('production', 'b.6blrZy9Faq7A.icW7AUVODH1fqA3J'));
-const driver = neo4j.v1.driver("bolt://localhost:7687", neo4j.v1.auth.basic("neo4j", "123456"));
+const driver = neo4j.v1.driver('bolt://hobby-kejliagjjjpngbkedcdfljbl.dbs.graphenedb.com:24786', neo4j.v1.auth.basic('production', 'b.6blrZy9Faq7A.icW7AUVODH1fqA3J'));
 const session = driver.session();
 
-session.run("CALL apoc.load.json('file:///home/lorelai/Desktop/NorthcodersWork/travel-planning-app/data/manc.js')")
+session.run("MATCH (p:Place) WHERE p.city = 'london' RETURN p")
 .then(result => {
+    result.records.map(record => console.log(Object.values(record)[2][0].properties))
     return result;
     session.close();
 })
