@@ -1,13 +1,10 @@
 const {
     fetchPlacesByCity,
-    fetchRestaurantsByCity,
-    formatChosenPlaces
+    fetchRestaurantsByCity
 } = require('../models/cities');
-const manchesterData = require('../utils/manchester.json');
-const londonData = require('../utils/london.json');
-const getSchedule = require('../utils/getSchedule');
-const fs = require('fs');
-const { addMapLink } = require('../utils/utils.js');
+// const manchesterData = require('../utils/manchester.json');
+// const londonData = require('../utils/london.json');
+// const { addMapLink } = require('../utils/utils.js');
 
 exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
@@ -49,8 +46,3 @@ exports.getRestaurantsByCity = (req, res, next) => {
     .catch(err => next(err));
 }
 
-exports.sendChosenPlaces = (req, res, next) => {
-    const places = req.body;
-    res.send({places})
-    .catch(err => next(err));
-}
