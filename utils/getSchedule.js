@@ -1,5 +1,5 @@
 const axios = require('axios');
-const {app_id, app_code} = require('../config.js');
+const {app_id, app_code} = require('../config');
 const stripTitle = /[^a-zA-Z\d]/g;
 
 /*This takes a HERE API object as the startpoint, an array of HERE objects as activities, and the number of activivities per day the user wants. It returns a promise that resolves into an object containing the schedule (So you need to call .then on it afterwards, ie 'getSchedule(args).then(schedule => ...) )*/
