@@ -30,7 +30,7 @@ function buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint){
   const data = arrayOfDaysOut.reduce((acc, oneDayArray, i) => {
     acc[`Day${i+1}`] = [startPoint, ...oneDayArray, startPoint].map((activity, j) => {
       return {
-        id: activity.id,
+        id: j+1,
         title: activity.title,
         time: arrayOfArrivalTimes[i][j],
         description: '',

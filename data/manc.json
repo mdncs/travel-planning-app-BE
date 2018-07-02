@@ -13,17 +13,6 @@
         },
         {
             "position": [
-                53.483474,
-                -2.241293
-            ],
-            "title": "Manchester Arndale",
-            "imageUrl": "https://www.manchestersciencefestival.com/cms/wp-content/uploads/2016/08/Manchester-Arndale-940x460.jpg",
-            "description": "Manchester Arndale is a large shopping centre in Manchester, England. The centre was built in the 1970s when many other cities were constructing large malls.",
-            "city": "manchester",
-            "link": "https://wego.here.com/united-kingdom/manchester/mall/manchester-arndale--826gcw2k-f2f864bca70c4f0da71f94fd56e0846b?map=53.483474,-2.241293,15,normal&x=ep"
-        },
-        {
-            "position": [
                 53.47707,
                 -2.25409
             ],
@@ -266,28 +255,6 @@
         },
         {
             "position": [
-                53.48637,
-                -2.24279
-            ],
-            "title": "Chetham's School of Music",
-            "imageUrl": "https://i2-prod.manchestereveningnews.co.uk/incoming/article2507699.ece/ALTERNATES/s615/chetham.jpg",
-            "description": "Chetham's School of Music is an independent co-educational boarding specialist music school in Manchester in North West England. Chetham's educates students between the ages of 8 and 18, all of whom enter the School via musical audition only. ",
-            "city": "manchester",
-            "link": "https://wego.here.com/united-kingdom/manchester/theatre-music-culture/chethams-school-of-music--826gcw2k-10ed3fb89d1d403d9d6552bf2088560a?map=53.48637,-2.24279,15,normal&x=ep"
-        },
-        {
-            "position": [
-                53.4769,
-                -2.27456
-            ],
-            "title": "Salford Lads Club",
-            "imageUrl": "https://slgc1903.files.wordpress.com/2012/06/img_8248.jpg?w=1200",
-            "description": "Salford Lads' Club is a recreational club in the Ordsall area of Salford, Greater Manchester, England.",
-            "city": "manchester",
-            "link": "https://wego.here.com/united-kingdom/manchester/sights-museums/salford-lads-club--826gcw2h-5bc90162d1de44569a20031bbcd6aa2b?map=53.4769,-2.27456,15,normal&x=ep"
-        },
-        {
-            "position": [
                 53.47686,
                 -2.23938
             ],
@@ -398,17 +365,6 @@
         },
         {
             "position": [
-                53.478743,
-                -2.236079
-            ],
-            "title": "Minshull Street Crown Court",
-            "imageUrl": "https://i2-prod.manchestereveningnews.co.uk/incoming/article11155836.ece/ALTERNATES/s615/CS76191661.jpg",
-            "description": "The City Police Courts, now commonly called Minshull Street Crown Court, is a complex of court buildings on Minshull Street in Manchester, designed in 1867–73 by the architect Thomas Worthington. The style is Worthington's trademark flamboyant Flemish Gothic with a massive corner tower and a chimney stack styled as a campanile. The courts are constructed in red brick with sandstone dressings and steeply-pitched slate roofs.",
-            "city": "manchester",
-            "link": "https://wego.here.com/united-kingdom/manchester/government-community-facility/minshull-street-crown-court--826gcw2j-7cf596d67f2648e199631f3db147d503?map=53.478743,-2.236079,15,normal&x=ep"
-        },
-        {
-            "position": [
                 53.47561,
                 -2.25547
             ],
@@ -428,17 +384,6 @@
             "description": "The Greater Manchester Police Museum is a former police station converted into a museum and archives detailing the history of policing in Greater Manchester, England.",
             "city": "manchester",
             "link": "https://wego.here.com/united-kingdom/manchester/museum/greater-manchester-police-museum--826gcw2m-ec4584b8b3b34963bb660c1a113d4a55?map=53.482464,-2.232384,15,normal&x=ep"
-        },
-        {
-            "position": [
-                53.49128,
-                -2.245639
-            ],
-            "title": "Rock over Climbing",
-            "imageUrl": "https://www.rockoverclimbing.co.uk/wp-content/gallery/centre-tour/dscn0317.jpg",
-            "description": "Climbing gym featuring bouldering terrain for various skill levels, plus a kids' play area & a cafe.",
-            "city": "manchester",
-            "link": "https://wego.here.com/united-kingdom/manchester/sports-facility-venue/rock-over-climbing--826gcw2k-640cd27e5a5d46cc850f2c505d0fda12?map=53.49128,-2.245639,15,normal&x=ep"
         }
     ]
 }
