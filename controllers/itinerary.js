@@ -1,4 +1,4 @@
-const {getSchedule} = require('../utils/getSchedule');
+const { getSchedule } = require('../utils/getSchedule');
 
 exports.sendItinerary = (req, res, next) => {
     const { startPoint, activities, noPerDay } = req.body;
