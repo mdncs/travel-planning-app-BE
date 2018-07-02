@@ -4,6 +4,7 @@ const stripTitle = /[^a-zA-Z\d]/g;
 
 /*This takes a HERE API object as the startpoint, an array of HERE objects as activities, and the number of activities per day the user wants. It returns a promise that resolves into an object containing the schedule (So you need to call .then on it afterwards, ie 'getSchedule(args).then(schedule => ...) )*/
 exports.getSchedule = function(startPoint, activities, nPerDay){
+  console.log('Starting getSchedule')
   const firstQuery = getQueryForEfficientDistance(startPoint, activities);
   return axios.get(firstQuery)
   .then(({data}) => {
@@ -14,6 +15,7 @@ exports.getSchedule = function(startPoint, activities, nPerDay){
 
     return Promise.all(routeQueries.map(query => axios.get(query)))
     .then(arrayOfData => {
+      console.log('got routes');
       const arrayOfRoutes = arrayOfData.map(({data}) => data);
       const arrayOfArrivalTimes = arrayOfRoutes.map(({response}) => parseTravelTimes(response.route));
       const finalSchedule = buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint);
@@ -34,7 +36,7 @@ function buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint){
         title: activity.title,
         time: arrayOfArrivalTimes[i][j],
         description: activity.description || '',
-        imageUrl: activity.imageUrl || '', 
+        imageUrl: activity.imageUrl || 'https://1001freedownloads.s3.amazonaws.com/vector/thumb/81568/pib-darkAlt2.png', 
         link: activity.link || '', 
         city: activity.city || ''
       };
