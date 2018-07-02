@@ -1,4 +1,4 @@
-exports.getLinkToMap = function(object, city){
+exports.addMapLink = function(object, city){
   let {id, category, position, title} = object; 
   const [lat, long] = position; 
   title = title.replace(/ /g, '-').replace(/[^a-zA-Z\d\-]/g,'');
