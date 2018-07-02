@@ -1,4 +1,4 @@
-const router = require('express')();
+const router = require('express').Router();
 const citiesRouter = require('./cities.js');
 const itineraryRouter = require('./itinerary.js');
 
