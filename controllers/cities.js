@@ -10,31 +10,17 @@ exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
     fetchPlacesByCity(cityName)
     .then((places) => {
-        console.log(places)
         // console.log(items)
         // const places = items.map((item, index) => {
         //     const mapLink = addMapLink(item, cityName);
-        //     if (cityName === 'liverpool') {
         //         return {
         //             position: item.position,
         //             title: item.title,
-        //             imageUrl: liverpoolData[index].imageUrl,
-        //             description: liverpoolData[index].description,
+        //             imageUrl: `${cityName}Data`[index].imageUrl,
+        //             description: `${cityName}Data`[index].description,
         //             city: cityName,
         //             link: mapLink
         //         }
-        //     } else if (cityName === 'london') {
-        //         return {
-        //             position: item.position,
-        //             title: item.title,
-        //             imageUrl: londonData[index].imageUrl,
-        //             description: londonData[index].description,
-        //             city: cityName,
-        //             link: mapLink
-        //         }
-        //     } else {
-        //         return item;
-        //     }
         // })
         res.send(places);
     })
