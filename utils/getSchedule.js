@@ -49,7 +49,7 @@ function buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint){
 /* This takes an array of route data. It returns an array of the times they should set off from each point, assuming they start at 9:00 spend 2 hours at each location.*/
 function parseTravelTimes(route){
   const {leg} = route[0]; 
-  let startTime = 1530432000351; // When passed to Date, produces a string with a time of precisely 09:00am. Adding traveltime in milliseconds produces the required arrival times. 
+  let startTime = 1530435600351; // When passed to Date, produces a string with a time of precisely 09:00am. Adding traveltime in milliseconds produces the required arrival times. 
   const twoHours = 7200000;
   const arrivalTimes = leg.map((fromXtoY) => {
     const {travelTime} = fromXtoY; 

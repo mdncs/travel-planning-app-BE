@@ -14,7 +14,7 @@ const fetchPlacesByCity = cityName => {
                 return {...object, bookmark: false};
             });
         })
-        .catch(err => console.log(err));
+        .catch(err => next(err));
 }
 
 
