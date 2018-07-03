@@ -1,3 +1,27 @@
+# Liverpool places
+
+{ Grand Central Hall }
+{ Liverpool City Sights }
+{ Royal Liver Building }
+{ Port of Liverpool Building }
+{ Conservation Centre, National Museums Liverpool }
+{ Liverpool Museum }
+{ Liverpool Cathedral }
+{ St Georges Hall }
+{ Walker Art Gallery }
+{ Merseyside Maritime Museum }
+{ Liverpool Metropolitan Cathedral }
+{ World Museum }
+{ Central Library }
+{ Liverpool Photo Safari }
+{ Odeon Cinema Liverpool One }
+{ Williamson Tunnels }
+{ Bluecoat Art Gallery }
+{ Anfield }
+{ Liverpool Town Hall }
+{ Beatles Story }
+]
+
 # Manchester places
 
 John Rylands Library

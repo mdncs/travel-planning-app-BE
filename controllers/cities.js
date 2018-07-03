@@ -3,21 +3,23 @@ const {
     fetchRestaurantsByCity
 } = require('../models/cities');
 // const manchesterData = require('../utils/manchester.json');
-// const londonData = require('../utils/london.json');
-// const { addMapLink } = require('../utils/utils.js');
+const liverpoolData = require('../utils/liverpool.json');
+const { addMapLink } = require('../utils/utils.js');
 
 exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
     fetchPlacesByCity(cityName)
-    .then(items => {
+    .then((places) => {
+        console.log(places)
+        // console.log(items)
         // const places = items.map((item, index) => {
         //     const mapLink = addMapLink(item, cityName);
-        //     if (cityName === 'manchester') {
+        //     if (cityName === 'liverpool') {
         //         return {
         //             position: item.position,
         //             title: item.title,
-        //             imageUrl: manchesterData[index].imageUrl,
-        //             description: manchesterData[index].description,
+        //             imageUrl: liverpoolData[index].imageUrl,
+        //             description: liverpoolData[index].description,
         //             city: cityName,
         //             link: mapLink
         //         }
@@ -34,7 +36,7 @@ exports.getPlacesByCity = (req, res, next) => {
         //         return item;
         //     }
         // })
-        res.send({ items });
+        res.send(places);
     })
     .catch(err => next(err));
 }
