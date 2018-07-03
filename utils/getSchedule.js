@@ -4,7 +4,6 @@ const stripTitle = /[^a-zA-Z\d]/g;
 
 /*This takes a HERE API object as the startpoint, an array of HERE objects as activities, and the number of activities per day the user wants. It returns a promise that resolves into an object containing the schedule (So you need to call .then on it afterwards, ie 'getSchedule(args).then(schedule => ...) )*/
 exports.getSchedule = function(startPoint, activities, nPerDay){
-  console.log('Starting getSchedule')
   const firstQuery = getQueryForEfficientDistance(startPoint, activities);
   return axios.get(firstQuery)
   .then(({data}) => {
@@ -15,7 +14,6 @@ exports.getSchedule = function(startPoint, activities, nPerDay){
 
     return Promise.all(routeQueries.map(query => axios.get(query)))
     .then(arrayOfData => {
-      console.log('got routes');
       const arrayOfRoutes = arrayOfData.map(({data}) => data);
       const arrayOfArrivalTimes = arrayOfRoutes.map(({response}) => parseTravelTimes(response.route));
       const finalSchedule = buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint);
@@ -51,7 +49,7 @@ function buildFrontEndObjects(arrayOfDaysOut, arrayOfArrivalTimes, startPoint){
 /* This takes an array of route data. It returns an array of the times they should set off from each point, assuming they start at 9:00 spend 2 hours at each location.*/
 function parseTravelTimes(route){
   const {leg} = route[0]; 
-  let startTime = 1530432000351; // When passed to Date, produces a time string at precisely 09:00am. Adding traveltime in milliseconds produces the required timestrings. 
+  let startTime = 1530432000351; // When passed to Date, produces a string with a time of precisely 09:00am. Adding traveltime in milliseconds produces the required arrival times. 
   const twoHours = 7200000;
   const arrivalTimes = leg.map((fromXtoY) => {
     const {travelTime} = fromXtoY; 
