@@ -18,7 +18,7 @@ const fetchPlacesByCity = cityName => {
 }
 
 
-//fetching directly from API by coordinates
+// fetching directly from API by coordinates
 // const fetchPlacesByCity = cityName => {
 //     const coordinates = refObj()[cityName.toLowerCase()];
 //     return axios.get(`https://places.cit.api.here.com/places/v1/discover/explore?at=${coordinates}&cat=sights-museums&size=20&app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg`)
