@@ -8,7 +8,6 @@ exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
     fetchPlacesByCity(cityName)
         .then(items => {
-            console.log(items)
             // const items = places.items.map((item, index) => {
             //     const mapLink = addMapLink(item, cityName);
             //     if (cityName === 'leeds') {
