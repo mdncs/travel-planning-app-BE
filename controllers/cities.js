@@ -11,20 +11,23 @@ const cities = require('../utils/cities.json');
 exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
     fetchPlacesByCity(cityName)
-    .then((places) => {
+    .then(items => {
+        console.log(items)
         // console.log(items)
-        // const places = items.map((item, index) => {
+        // const items = places.map((item, index) => {
         //     const mapLink = addMapLink(item, cityName);
+        //     if (cityName === 'london') {
         //         return {
         //             position: item.position,
         //             title: item.title,
-        //             imageUrl: `${cityName}Data`[index].imageUrl,
-        //             description: `${cityName}Data`[index].description,
+        //             imageUrl: londonData[index].imageUrl,
+        //             description: londonData[index].description,
         //             city: cityName,
         //             link: mapLink
         //         }
+        //     }
         // })
-        res.send(places);
+        res.send({items});
     })
     .catch(err => next(err));
 }
