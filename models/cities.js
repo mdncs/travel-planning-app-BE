@@ -17,8 +17,6 @@ const fetchPlacesByCity = cityName => {
         });
 }
 
-
-
 // fetching directly from API by coordinates
 // const fetchPlacesByCity = cityName => {
 //     const coordinates = refObj()[cityName.toLowerCase()];
