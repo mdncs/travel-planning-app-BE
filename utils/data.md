@@ -1,3 +1,36 @@
+# Birmingham
+
+Birmingham New Street Railway Station
+Bullring
+Birmingham Hippodrome
+Symphony Hall
+Arena Birmingham
+Birmingham Museum and Art Gallery
+National Sea Life Centre
+O2 Academy
+Thinktank
+Town Hall Birmingham
+Custard Factory
+Old Joint Stock
+Library of Birmingham
+Millennium Point
+Edgbaston Cricket Ground
+Birmingham Repertory Theatre
+International Convention Centre
+Cbso Centre
+Electric Cinema
+Star City Entertainment Centre
+The Blue Orange Theatre
+St Chads Cathedral
+Ikon Gallery
+Birmingham Botanical Gardens
+Council House
+Birmingham Cathedral
+Cadbury World
+Barber Institute of Fine Arts
+The Fort Shopping Park
+Moseley Bog
+
 # Leeds
 
 First Direct Arena
