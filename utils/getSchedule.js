@@ -1,5 +1,5 @@
 const axios = require('axios');
-const app_id = 'jwBXL0FhwOhwIQ6rchL8',
+const app_id = 'jwBXL0FhwOhwIQ6rchL8';
 const app_code = '2OmhTDSj0bPgD_mzzn88UQ';
 const stripTitle = /[^a-zA-Z\d]/g;
 
