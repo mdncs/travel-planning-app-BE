@@ -18,6 +18,8 @@ const fetchPlacesByCity = cityName => {
         .catch(err => next(err));
 }
 
+
+
 // fetching directly from API by coordinates
 // const fetchPlacesByCity = cityName => {
 //     const coordinates = refObj()[cityName.toLowerCase()];

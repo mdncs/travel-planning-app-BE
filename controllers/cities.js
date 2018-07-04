@@ -2,7 +2,7 @@ const {
     fetchPlacesByCity,
     fetchRestaurantsByCity
 } = require('../models/cities');
-// const { addMapLink } = require('../utils/utils.js');
+const { addMapLink } = require('../utils/utils.js');
 
 exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
