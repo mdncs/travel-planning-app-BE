@@ -1,3 +1,26 @@
+# Leeds
+
+First Direct Arena
+Royal Armouries
+Leeds Art Gallery
+Millennium Square
+Grand Theatre & Opera House
+Leeds University Union
+Leeds City Museum
+Leeds Kirkgate Market
+West Yorkshire Playhouse
+Merrion Centre
+Leeds United Football Club
+Woodhouse Moor Park
+Abbey House Museum
+Roundhay Park
+White Rose Centre
+City Varieties Music Hall
+Victoria Quarter
+The Turk's Head
+Corn Exchange
+Northern Ballet
+
 # Liverpool places
 
 { Grand Central Hall }

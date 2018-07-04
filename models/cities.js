@@ -9,7 +9,7 @@ const fetchPlacesByCity = cityName => {
         .then(result => {
             const actual = [];
             result.records.forEach(record => actual.push(Object.values(record)[2][0].properties));
-            
+            console.log(actual)
             return actual.map (object => {
                 return {...object, bookmark: false};
             });
