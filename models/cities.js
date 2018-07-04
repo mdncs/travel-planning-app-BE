@@ -3,6 +3,7 @@ const { refObj } = require('../utils/createCoordinatesRefObj.js');
 const neo4j = require('neo4j-driver');
 const driver = neo4j.v1.driver('bolt://hobby-kejliagjjjpngbkedcdfljbl.dbs.graphenedb.com:24786', neo4j.v1.auth.basic('production', 'b.6blrZy9Faq7A.icW7AUVODH1fqA3J'));
 const session = driver.session();
+const {app_id, app_code} = require('../config.js');
 
 const fetchPlacesByCity = cityName => {
     return session.run(`MATCH (p:Place) WHERE p.city = '${cityName}' RETURN p`)
@@ -34,7 +35,12 @@ const fetchRestaurantsByCity = cityName => {
     .catch(err => next(err));
 };
 
+const fetchHotelsByCity = (lat, lng, query) => {
+    return axios.get(`https://places.cit.api.here.com/places/v1/discover/search?at=${lat},${lng}&q=${query}&Accept-Language=en-GB%2Cen%3Bq%3D0.5&app_id=${app_id}&app_code=${app_code}`);
+}
+
 module.exports = {
     fetchPlacesByCity,
-    fetchRestaurantsByCity
+    fetchRestaurantsByCity,
+    fetchHotelsByCity
 };
