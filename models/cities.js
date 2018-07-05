@@ -3,8 +3,7 @@ const { refObj } = require('../utils/createCoordinatesRefObj.js');
 const neo4j = require('neo4j-driver');
 const driver = neo4j.v1.driver('bolt://hobby-kejliagjjjpngbkedcdfljbl.dbs.graphenedb.com:24786', neo4j.v1.auth.basic('production', 'b.6blrZy9Faq7A.icW7AUVODH1fqA3J'));
 const session = driver.session();
-const app_id = 'jwBXL0FhwOhwIQ6rchL8';
-const app_code = '2OmhTDSj0bPgD_mzzn88UQ';
+const { app_id, app_code } = require('../config');
 
 const fetchPlacesByCity = cityName => {
     return session.run(`MATCH (p:Place) WHERE p.city = '${cityName}' RETURN p`)
@@ -17,14 +16,6 @@ const fetchPlacesByCity = cityName => {
         });
 }
 
-// fetching directly from API by coordinates
-// const fetchPlacesByCity = cityName => {
-//     const coordinates = refObj()[cityName.toLowerCase()];
-//     return axios.get(`https://places.cit.api.here.com/places/v1/discover/explore?at=${coordinates}&cat=sights-museums&size=30&app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg`)
-//     .then(res => res.data.results)
-//     .catch(err => next(err));
-// };
-
 const fetchRestaurantsByCity = cityName => {
     const coordinates = refObj()[cityName.toLowerCase()];
     return axios.get(`https://places.cit.api.here.com/places/v1/discover/explore?at=${coordinates}&cat=eat-drink&size=40&app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg`)
@@ -35,6 +26,14 @@ const fetchRestaurantsByCity = cityName => {
 const fetchHotelsByCity = (lat, lng, query) => {
     return axios.get(`https://places.cit.api.here.com/places/v1/discover/search?at=${lat},${lng}&q=${query}&Accept-Language=en-GB%2Cen%3Bq%3D0.5&app_id=${app_id}&app_code=${app_code}`);
 }
+
+// fetching directly from API by coordinates
+// const fetchPlacesByCity = cityName => {
+//     const coordinates = refObj()[cityName.toLowerCase()];
+//     return axios.get(`https://places.cit.api.here.com/places/v1/discover/explore?at=${coordinates}&cat=sights-museums&size=30&app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg`)
+//     .then(res => res.data.results)
+//     .catch(err => next(err));
+// };
 
 module.exports = {
     fetchPlacesByCity,

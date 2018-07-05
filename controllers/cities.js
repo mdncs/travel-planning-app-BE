@@ -4,6 +4,7 @@ const {
     fetchHotelsByCity
 } = require('../models/cities');
 const cities = require('../utils/cities.json');
+const { addMapLink } = require('../utils/utils');
 
 exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;

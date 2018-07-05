@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Travel Planning App API</title>
+</head>
+
+<body>
+        <h1>Tripster - API Endpoints</h1>
+                <div class="list">
+                        <ul>
+                <li><h2>Cities</h2></li>
+                        <h3>
+                            <ul>
+                                <li>
+                                    <p>GET /:cityName/places: Gets a number of landmarks based on geolocation</p>
+                                </li>
+                                <li>
+                                    <p>GET /:cityName/restaurants: Gets a number of restaurants based on geolocation</p>
+                                </li>
+                                <li>
+                                    <p>GET /:cityName/hotels: Gets a number of hotels based on geolocation</p>
+                                </li>
+                            </ul>
+                        </h3>
+                <li><h2>Itinerary</h2></li>
+                        <h3>
+                            <ul>
+                                <li>
+                                    <p>POST /itinerary: Takes an object with keys for startingPoint, activities, numberPerDay 
+                                        <br>and returns them divided by days and in most efficient order for visiting</p>
+                                </li>
+                            </ul>
+                        </h3>
+                </div>
+        </body>
+</html>
