@@ -15,6 +15,8 @@ app.use('/*', (req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
+    console.log(err)
+
     err.status
         ? res.status(err.status).send(err.msg)
         : res.status(500).send('Internal server error');

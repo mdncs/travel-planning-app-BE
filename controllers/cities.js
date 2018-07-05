@@ -10,7 +10,8 @@ exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
     fetchPlacesByCity(cityName)
         .then(items => {
-            res.send({ items });
+            if (!items.length) next({ status: 404, msg: 'Page not found' });
+            else res.send({ items });
         })
         .catch(err => next(err));
 }
@@ -30,14 +31,17 @@ exports.getHotelsByCity = (req, res, next) => {
     return fetchHotelsByCity(lat, lng, search)
         .then(({ data }) => {
             const { items } = data.results;
-            const refinedItems = items.map(hotel => {
+            if (!items.length) next({ status: 400, msg: 'Bad Request' });
+            else {
+                const refinedItems = items.map(hotel => {
                     let { position, title, id } = hotel;
                     const link = addMapLink(hotel, cityName);
                     const imageUrl = 'https://1001freedownloads.s3.amazonaws.com/vector/thumb/81568/pib-darkAlt2.png';
                     const description = '';
                     return { id, position, title, link, description, imageUrl, city: cityName };
                 });
-            return res.send({ items: refinedItems });
+                return res.send({ items: refinedItems });
+            }
         })
     .catch(err => next(err))
 }

@@ -4,8 +4,5 @@ exports.sendItinerary = (req, res, next) => {
     const { startPoint, activities, noPerDay } = req.body;
     return getSchedule(startPoint, activities, noPerDay)
         .then(schedule => res.send(schedule))
-        .catch(err => {
-            console.log(err);
-            next(err);
-        });
+        .catch(err => next(err));
 }
