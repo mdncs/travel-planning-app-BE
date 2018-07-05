@@ -3,28 +3,12 @@ const {
     fetchRestaurantsByCity,
     fetchHotelsByCity
 } = require('../models/cities');
-const { addMapLink } = require('../utils/utils.js');
 const cities = require('../utils/cities.json');
 
 exports.getPlacesByCity = (req, res, next) => {
     const { cityName } = req.params;
     fetchPlacesByCity(cityName)
         .then(items => {
-            // const items = places.items.map((item, index) => {
-            //     const mapLink = addMapLink(item, cityName);
-            //     if (cityName === 'leeds') {
-            //         return items;
-            //     } else {
-            //         return {
-            //             position: item.position,
-            //             title: item.title,
-            //             imageUrl: "",
-            //             description: "",
-            //             city: cityName,
-            //             link: mapLink
-            //         }
-            //     }
-            // })
             res.send({ items });
         })
         .catch(err => next(err));
