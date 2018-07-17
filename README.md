@@ -55,4 +55,6 @@ The database used for the purposes of this project is hosted on AWS via Graphene
 
 The API is hosted on Heroku here: https://be-travel-planning-app.herokuapp.com/api
 
+The Front-End is built with React and React Native, and uses Expo as simulator for Android. The full FE repo can be found here: https://github.com/mdncs/TravelApp and can be initialised for Android from a code editor by running "npm run android" after cloning the repo locally.
+
 For more information on how to deploy and manage your apps on Heroku, their documentation is available here: https://devcenter.heroku.com/
